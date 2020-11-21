@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Please Type \nA to search for Artist info \nAW to search for Artwork info \nAny button to leave\nEnter: ");
+        String search = scan.nextLine();
+
+        while (search.equals("A") || search.equals("AW")) {
+            if (search.equals("A")) {
+                System.out.print("Enter artist you want to search: ");
+                String artistName = scan.nextLine();
+                String result = searchArtist.searchArtistInfo(artistName);
+                System.out.println(result);
+            }
+            else if (search.equals("AW")){
+                System.out.println("Enter artwork you want to search: ");
+                String artworkName = scan.nextLine();
+                String result2 = searchArtwork.searchArtworkInfo(artworkName);
+                System.out.println(result2);
+            }
+
+            System.out.print("\nPlease Type \nA to search for Artist info \nAW to search for Artwork info \nAny button to leave\nEnter: ");
+            search = scan.nextLine();
+        }
+
+        System.out.print("Thank you for using this program!");
+    }
+}
